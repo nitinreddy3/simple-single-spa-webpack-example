@@ -29,14 +29,15 @@ module.exports = {
   },
   module: {
     rules: [{
-        test: /\.js?$/,
-        exclude: [path.resolve(__dirname, 'node_modules')],
-        loader: 'babel-loader',
-      },
-      {
-        test: /\.tsx?$/,
-        loader: 'ts-loader',
-      },
+      test: /\.js?$/,
+      exclude: [path.resolve(__dirname, 'node_modules')],
+      loader: 'babel-loader',
+    },
+    {
+      test: /\.tsx?$/,
+      loader: 'ts-loader',
+    },
+    { test: /[\/\\]@angular[\/\\].+\.js$/, parser: { system: true } },
     ],
   },
   node: {
